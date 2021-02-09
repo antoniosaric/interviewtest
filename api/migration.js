@@ -26,6 +26,7 @@ router.get('/', async (req,res) => {
             invoice_line.Qty AS Qty,
             invoice_line.UnitOfMeasure AS UnitOfMeasure,
             invoice_line.UnitPrice AS UnitPrice,
+            invoice_line.Weight AS Weight,
             manufacturer.Name AS MName,
             manufacturer.Address AS MAddress,
             manufacturer.Contact AS MContact,
@@ -77,7 +78,8 @@ router.get('/', async (req,res) => {
                                 qty: result[i+marker].Qty,
                                 weight: result[i+marker].Weight,
                                 unit_of_measure: result[i+marker].UnitOfMeasure,
-                                unit_price: result[i+marker].UnitPrice
+                                unit_price: result[i+marker].UnitPrice,
+                                weight: result[i+marker].Weight
                             });
                             marker++;
                             breakLoop--;

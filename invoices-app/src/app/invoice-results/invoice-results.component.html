@@ -1,98 +1,56 @@
+<div class="top100"></div>
 <div class="center">
   <span class="custom-dropdown big shader">
     <form #orderInvoiceForm="ngForm" (change)='onOptionsSelected($event)'>
       <select name="invoice_sort">
-        <option *ngFor="let sort of available_sort; let i = index" [attr.data-index]="i" [value]="i" [disabled]="i == 0">>
-          {{sort}}
+        <option *ngFor="let option of available_sort; let i = index" [attr.data-index]="i" [value]="i" [disabled]="i == 0">>
+          {{option}}
         </option>
       </select>
     </form>
   </span>
 </div>
 
-<h2>Responsive Table</h2>
+<div class="top50"></div>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
-        <tr>
-            <th>Header 1</th>
-            <th>Header 2</th>
-            <th>Header 3</th>
-            <th>Header 4</th>
-            <th>Header 5</th>
-        </tr>
+            <tr>
+                <th>Invoice #</th>
+                <th>Invoice Date</th>
+                <th>Dist Name</th>
+                <th>Dist Addr</th>
+                <th>Cust Name</th>
+                <th>Cust Addr</th>
+                <th>Manu Name</th>
+                <th>Manu Addr</th>
+                <th>Prod Code</th>
+                <th>Prod Desc</th>
+                <th>UOM</th>
+                <th>Purch Qty</th>
+                <th>Purch Wgt</th>
+                <th>Unit Price</th>
+                <th>Total Price</th>
+            </tr>
         </thead>
-        <tbody>
-        <tr>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-            <td>Content 1</td>
-        </tr>
-        <tr>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-            <td>Content 2</td>
-        </tr>
-        <tr>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-            <td>Content 3</td>
-        </tr>
-        <tr>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-            <td>Content 4</td>
-        </tr>
-        <tr>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-            <td>Content 5</td>
-        </tr>
-        <tr>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-            <td>Content 6</td>
-        </tr>
-        <tr>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-            <td>Content 7</td>
-        </tr>
-        <tr>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-            <td>Content 8</td>
-        </tr>
-        <tr>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-            <td>Content 9</td>
-        </tr>
-        <tr>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-            <td>Content 10</td>
-        </tr>
+        <tbody *ngFor="let invoice of invoices">
+            <tr >
+                <td>{{invoice.invoice_number}}</td>
+                <td>{{invoice.invoice_date}}</td>
+                <td>{{invoice.distributor_name}}</td>
+                <td>{{invoice.distributor_address}}</td>
+                <td>{{invoice.customer_name}}</td>
+                <td>{{invoice.customer_address}}</td>
+                <td>{{invoice.manufacturer_name}}</td>
+                <td>{{invoice.manufacturer_address}}</td>
+                <td>{{invoice.product_code}}</td>
+                <td>{{invoice.description}}</td>
+                <td>{{invoice.unit_of_measure}}</td>
+                <td>{{invoice.qty}}</td>
+                <td>{{invoice.weight}}</td>
+                <td>{{invoice.unit_price}}</td>
+                <td>{{invoice.total_price}}</td>
+            </tr>
         <tbody>
     </table>
 </div>
