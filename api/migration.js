@@ -70,7 +70,7 @@ router.get('/', async (req,res) => {
                         while( breakLoop ){
                             
                             invoiceObj.line_item.push({
-                                product_code: result[i+marker].InvoiceNumber,
+                                product_code: result[i+marker].ProductCode,
                                 description: result[i+marker].Description,
                                 manufacturer_name: result[i+marker].MName,
                                 manufacturer_address: result[i+marker].MAddress,

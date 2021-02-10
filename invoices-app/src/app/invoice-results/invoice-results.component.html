@@ -36,20 +36,20 @@
         <tbody *ngFor="let invoice of invoices">
             <tr >
                 <td>{{invoice.invoice_number}}</td>
-                <td>{{invoice.invoice_date}}</td>
+                <td>{{invoice.invoice_date | date: 'mediumDate'}}</td>
                 <td>{{invoice.distributor_name}}</td>
                 <td>{{invoice.distributor_address}}</td>
                 <td>{{invoice.customer_name}}</td>
                 <td>{{invoice.customer_address}}</td>
-                <td>{{invoice.manufacturer_name}}</td>
-                <td>{{invoice.manufacturer_address}}</td>
-                <td>{{invoice.product_code}}</td>
-                <td>{{invoice.description}}</td>
-                <td>{{invoice.unit_of_measure}}</td>
-                <td>{{invoice.qty}}</td>
-                <td>{{invoice.weight}}</td>
-                <td>{{invoice.unit_price}}</td>
-                <td>{{invoice.total_price}}</td>
+                <td>{{invoice.line_item.manufacturer_name}}</td>
+                <td>{{invoice.line_item.manufacturer_address}}</td>
+                <td>{{invoice.line_item.product_code}}</td>
+                <td>{{invoice.line_item.description}}</td>
+                <td>{{invoice.line_item.unit_of_measure}}</td>
+                <td>{{invoice.line_item.qty}}</td>
+                <td>{{invoice.line_item.weight}}</td>
+                <td>{{invoice.line_item.unit_price}}</td>
+                <td>{{invoice.line_item.qty * invoice.line_item.unit_price }}</td>
             </tr>
         <tbody>
     </table>
